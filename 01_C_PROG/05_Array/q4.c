@@ -1,11 +1,13 @@
-#include<stdio.h>
-int main()
-{
-    int i;
-    int a[15]={[2]=13,[9]=5,[14]=4};
-    for(i=0;i<15;i++)
-    {
-        printf("%d\n",a[i]);
+#include <stdio.h>
+int main(){
+    int arr[6] = {9, 8, 7, 2, 4, 3};
+    int temp;
+    for(int i=0; i<6/2; i++){
+        temp=arr[i];
+        arr[i]=arr[6-i-1];
+        arr[6-i-1]=temp;
     }
-    printf("%d\n",a[i]);
+    for(int i=0; i<6; i++){
+        printf("%d\n", arr[i]);
+    }
 }
