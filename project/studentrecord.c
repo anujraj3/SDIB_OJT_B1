@@ -9,112 +9,113 @@ struct Student
     float percentage;
     struct Student *next;
     
-}* head;
-void insert(int rollnumber, char* name, char* phone, float percentage)
-{
+};
+struct student *head,*temp;
+// void insert(int rollnumber, char* name, char* phone, float percentage)
+// {
     
-    struct Student * student = (struct Student *) malloc(sizeof(struct Student));
-    student->rollnumber = rollnumber;
-    strcpy(student->name, name);
-    strcpy(student->phone, phone);
-    student->percentage = percentage;
-    student->next = NULL;
+//     struct Student * student = (struct Student *) malloc(sizeof(struct Student));
+//     student->rollnumber = rollnumber;
+//     strcpy(student->name, name);
+//     strcpy(student->phone, phone);
+//     student->percentage = percentage;
+//     student->next = NULL;
     
-    if(head==NULL){
+//     if(head==NULL){
        
-        head = student;
-    }
-    else{
+//         head = student;
+//     }
+//     else{
        
-        student->next = head;
-        head = student;
-    }
+//         student->next = head;
+//         head = student;
+//     }
     
-}
-void search(int rollnumber)
-{
-    struct Student * temp = head;
-    while(temp!=NULL){
-        if(temp->rollnumber==rollnumber){
-            printf("Roll Number: %d\n", temp->rollnumber);
-            printf("Name: %s\n", temp->name);
-            printf("Phone: %s\n", temp->phone);
-            printf("Percentage: %0.4f\n", temp->percentage);
-            return;
-        }
-        temp = temp->next;
-    }
-    printf("Student with roll number %d is not found !!!\n", rollnumber);
-}
-void update(int rollnumber)
-{
+// }
+// void search(int rollnumber)
+// {
+//     struct Student * temp = head;
+//     while(temp!=NULL){
+//         if(temp->rollnumber==rollnumber){
+//             printf("Roll Number: %d\n", temp->rollnumber);
+//             printf("Name: %s\n", temp->name);
+//             printf("Phone: %s\n", temp->phone);
+//             printf("Percentage: %0.4f\n", temp->percentage);
+//             return;
+//         }
+//         temp = temp->next;
+//     }
+//     printf("Student with roll number %d is not found !!!\n", rollnumber);
+// }
+// void update(int rollnumber)
+// {
     
-    struct Student * temp = head;
-    while(temp!=NULL){
+//     struct Student * temp = head;
+//     while(temp!=NULL){
         
-        if(temp->rollnumber==rollnumber){
-            printf("Record with roll number %d Found !!!\n", rollnumber);
-            printf("Enter new name: ");
-            scanf("%s", temp->name);
-            printf("Enter new phone number: ");
-            scanf("%s", temp->phone);
-            printf("Enter new percentage: ");
-            scanf("%f",&temp->percentage);
-            printf("Updation Successful!!!\n");
-            return;
-        }
-        temp = temp->next;
+//         if(temp->rollnumber==rollnumber){
+//             printf("Record with roll number %d Found !!!\n", rollnumber);
+//             printf("Enter new name: ");
+//             scanf("%s", temp->name);
+//             printf("Enter new phone number: ");
+//             scanf("%s", temp->phone);
+//             printf("Enter new percentage: ");
+//             scanf("%f",&temp->percentage);
+//             printf("Updation Successful!!!\n");
+//             return;
+//         }
+//         temp = temp->next;
         
-    }
-    printf("Student with roll number %d is not found !!!\n", rollnumber);
+//     }
+//     printf("Student with roll number %d is not found !!!\n", rollnumber);
     
-}
-void Delete(int rollnumber)
-{
-    struct Student * temp1 = head;
-    struct Student * temp2 = head; 
-    while(temp1!=NULL){
+// }
+// void Delete(int rollnumber)
+// {
+//     struct Student * temp1 = head;
+//     struct Student * temp2 = head; 
+//     while(temp1!=NULL){
         
-        if(temp1->rollnumber==rollnumber){
+//         if(temp1->rollnumber==rollnumber){
             
-            printf("Record with roll number %d Found !!!\n", rollnumber);
+//             printf("Record with roll number %d Found !!!\n", rollnumber);
             
-            if(temp1==temp2){
+//             if(temp1==temp2){
                 
-                head = head->next;
-                free(temp1);
-            }
-            else{
+//                 head = head->next;
+//                 free(temp1);
+//             }
+//             else{
                 
                 
-                temp2->next = temp1->next;
-                free(temp1); 
-            }
+//                 temp2->next = temp1->next;
+//                 free(temp1); 
+//             }
             
-            printf("Record Successfully Deleted !!!\n");
-            return;
+//             printf("Record Successfully Deleted !!!\n");
+//             return;
             
-        }
-        temp2 = temp1;
-        temp1 = temp1->next;
+//         }
+//         temp2 = temp1;
+//         temp1 = temp1->next;
         
-    }
-    printf("Student with roll number %d is not found !!!\n", rollnumber);
+//     }
+//     printf("Student with roll number %d is not found !!!\n", rollnumber);
     
-}
-void display()
-{
-    struct Student * temp = head;
-    while(temp!=NULL){
+// }
+// void display()
+// {
+//     struct Student * temp = head;
+//     while(temp!=NULL){
         
-        printf("Roll Number: %d\n", temp->rollnumber);
-        printf("Name: %s\n", temp->name);
-        printf("Phone: %s\n", temp->phone);
-        printf("Percentage: %0.4f\n\n", temp->percentage);
-        temp = temp->next;
+//         printf("Roll Number: %d\n", temp->rollnumber);
+//         printf("Name: %s\n", temp->name);
+//         printf("Phone: %s\n", temp->phone);
+//         printf("Percentage: %0.4f\n\n", temp->percentage);
+//         temp = temp->next;
         
-    }
-}
+//     }
+// }
 int main()
 {
     head = NULL;

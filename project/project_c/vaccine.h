@@ -1,0 +1,2 @@
+void heading();
+void details();
